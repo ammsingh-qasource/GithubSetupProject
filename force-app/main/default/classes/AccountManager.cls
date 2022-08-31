@@ -5,7 +5,7 @@ global class AccountManager {
         Account account = new Account();
         RestRequest request = RestContext.request;
         String accountId = request.requestURI.substring(request.requestURI.lastIndexOf('/')+1);
-    	//Hi How are you
+    	//Hi How are you?
        	try{
        	account = [SELECT Id,Name, (SELECT Id,Name FROM Contacts) FROM Account WHERE Id = :accountId LIMIT 1];       
         }
